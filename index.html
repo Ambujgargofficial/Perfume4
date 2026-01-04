@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Soul Sync - Sanctuary Edition</title>
+    <title>Soul Sync</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- React & ReactDOM -->
@@ -144,6 +144,7 @@
         };
 
         // --- BILINGUAL DATA ---
+        // NOTE: Chakra names in Hindi version kept as English as requested
         const CHAKRA_DATA = [
             { 
                 id: "root", name: { en: "Root Chakra", hi: "Root Chakra" }, sanskrit: "Muladhara", 
@@ -159,9 +160,9 @@
                     practice: { en: "Walk barefoot on grass or soil.", hi: "नंगे पैर घास या मिट्टी पर चलें।" }
                 },
                 questions: [
-                    { id: "r1", text: { en: "I move through my days feeling tense, as if something could go wrong.", hi: "मैं अपने दिन तनाव में बिताता हूँ, जैसे कुछ गलत होने वाला है।" } },
-                    { id: "r2", text: { en: "Even when I rest, my body struggles to truly relax.", hi: "आराम करते समय भी मेरा शरीर पूरी तरह से ढीला नहीं हो पाता।" } },
-                    { id: "r3", text: { en: "I often feel like I am carrying responsibilities heavier than I can manage.", hi: "मुझे अक्सर लगता है कि मैं अपनी क्षमता से अधिक जिम्मेदारियां उठा रहा हूँ।" } }
+                    { id: "r1", text: { en: "I move through my days feeling tense, as if something could go wrong.", hi: "मेरा दिन डर या बेचैनी में निकलता है, जैसे कुछ गलत होने वाला हो।" } },
+                    { id: "r2", text: { en: "Even when I rest, my body struggles to truly relax.", hi: "आराम करने के बाद भी मुझे बेचैनी महसूस होती है।" } },
+                    { id: "r3", text: { en: "I often feel like I am carrying responsibilities heavier than I can manage.", hi: "अक्सर मुझे लगता है कि मैं जितना संभाल सकता हूँ, उससे ज़्यादा जिम्मेदारियाँ ले रहा हूँ।" } }
                 ] 
             },
             { 
@@ -178,9 +179,9 @@
                     practice: { en: "Dance or engage in creative play.", hi: "नृत्य करें या किसी रचनात्मक खेल में शामिल हों।" }
                 },
                 questions: [
-                    { id: "s1", text: { en: "I feel emotionally numb or disconnected from pleasure.", hi: "मैं भावनात्मक रूप से सुन्न या खुशी से कटा हुआ महसूस करता हूँ।" } },
+                    { id: "s1", text: { en: "I feel emotionally numb or disconnected from pleasure.", hi: "मुझे भावनाएँ कम महसूस होती हैं और खुशी से जुड़ाव नहीं लगता।" } },
                     { id: "s2", text: { en: "I hold back my feelings because expressing them feels unsafe.", hi: "मैं अपनी भावनाओं को दबाता हूँ क्योंकि उन्हें व्यक्त करना असुरक्षित लगता है।" } },
-                    { id: "s3", text: { en: "I miss a version of myself that felt lighter and playful.", hi: "मुझे अपने उस रूप की याद आती है जो हल्का और चंचल था।" } }
+                    { id: "s3", text: { en: "I miss a version of myself that felt lighter and playful.", hi: "कई बार मेरे मन में ये ख्याल आता है, जाने कहाँ गए वो दिन।" } }
                 ] 
             },
             { 
@@ -197,9 +198,9 @@
                     practice: { en: "Make one clear decision without apology.", hi: "बिना किसी खेद के एक स्पष्ट निर्णय लें।" }
                 },
                 questions: [
-                    { id: "sp1", text: { en: "I doubt myself even when others expect me to be confident.", hi: "मैं खुद पर शक करता हूँ, भले ही दूसरों को मुझसे आत्मविश्वास की उम्मीद हो।" } },
+                    { id: "sp1", text: { en: "I doubt myself even when others expect me to be confident.", hi: "मैं खुद के फैसलों पर शक करता हूँ, भले ही दूसरों को मुझ पर कितना ही विश्वास हो।" } },
                     { id: "sp2", text: { en: "I feel pressure to stay in control, even when I feel overwhelmed.", hi: "जब मैं परेशान होता हूँ, तब भी मुझे नियंत्रण में रहने का दबाव महसूस होता है।" } },
-                    { id: "sp3", text: { en: "I often push myself forward despite feeling internally drained.", hi: "मैं अंदर से थका होने के बावजूद अक्सर खुद को आगे धकेलता रहता हूँ।" } }
+                    { id: "sp3", text: { en: "I often push myself forward despite feeling internally drained.", hi: "मैं अंदर से थका होने के बावजूद अक्सर खुद को जबरदस्ती आगे बढ़ाता हूँ।" } }
                 ] 
             },
             { 
@@ -216,9 +217,9 @@
                     practice: { en: "Practice a random act of kindness.", hi: "बिना किसी कारण किसी की मदद करें।" }
                 },
                 questions: [
-                    { id: "h1", text: { en: "I feel emotionally alone, even when I am around people.", hi: "लोगों के बीच होने पर भी मैं भावनात्मक रूप से अकेला महसूस करता हूँ।" } },
-                    { id: "h2", text: { en: "I carry unspoken emotional pain that I rarely share.", hi: "मैं अनकहा भावनात्मक दर्द लिए फिरता हूँ जिसे मैं शायद ही कभी साझा करता हूँ।" } },
-                    { id: "h3", text: { en: "I find it difficult to be gentle with myself.", hi: "मुझे खुद के प्रति नरम या दयालु होना मुश्किल लगता है।" } }
+                    { id: "h1", text: { en: "I feel emotionally alone, even when I am around people.", hi: "लोगों के बीच होने पर भी मैं अंदर से अकेला महसूस करता हूँ।" } },
+                    { id: "h2", text: { en: "I carry unspoken emotional pain that I rarely share.", hi: "मैं अपने अंदर के दर्द को किसी से भी बाँट नहीं पाता हूँ।" } },
+                    { id: "h3", text: { en: "I find it difficult to be gentle with myself.", hi: "मैं अपने जीवन में संतुष्ट महसूस नहीं करता हूँ।" } }
                 ] 
             },
             { 
@@ -235,8 +236,8 @@
                     practice: { en: "Sing, chant, or write a letter.", hi: "गाएं, मंत्र जपें, या एक पत्र लिखें।" }
                 },
                 questions: [
-                    { id: "t1", text: { en: "I often silence my true feelings to avoid conflict.", hi: "संघर्ष से बचने के लिए मैं अक्सर अपनी सच्ची भावनाओं को चुप करा देता हूँ।" } },
-                    { id: "t2", text: { en: "I feel misunderstood, even when I try to explain myself.", hi: "जब मैं समझाने की कोशिश करता हूँ, तब भी मुझे लगता है कि लोग मुझे गलत समझते हैं।" } },
+                    { id: "t1", text: { en: "I often silence my true feelings to avoid conflict.", hi: "निराशा और मतभेद से बचने के लिए मैं अपनी भावनाओं को चुप करा देता हूँ।" } },
+                    { id: "t2", text: { en: "I feel misunderstood, even when I try to explain myself.", hi: "जब मैं कुछ समझाने की कोशिश करता हूँ, तब भी मुझे लगता है लोग मुझे गलत समझ रहे हैं।" } },
                     { id: "t3", text: { en: "There are things I wish I could say, but never do.", hi: "ऐसी कई बातें हैं जो मैं कहना चाहता हूँ, लेकिन कभी कह नहीं पाता।" } }
                 ] 
             },
@@ -254,8 +255,8 @@
                     practice: { en: "Spend 5 minutes in silence without screens.", hi: "बिना स्क्रीन के 5 मिनट मौन में बिताएं।" }
                 },
                 questions: [
-                    { id: "te1", text: { en: "My thoughts feel noisy, repetitive, or heavy.", hi: "मेरे विचार शोर भरे, दोहराव वाले या भारी लगते हैं।" } },
-                    { id: "te2", text: { en: "I struggle to see clarity in situations that matter to me.", hi: "मेरे लिए महत्वपूर्ण स्थितियों में स्पष्टता देखना मुझे मुश्किल लगता है।" } },
+                    { id: "te1", text: { en: "My thoughts feel noisy, repetitive, or heavy.", hi: "मेरे मन में कई ऐसे ख्याल हैं जो हमेशा मेरी सोच पर हावी रहते हैं।" } },
+                    { id: "te2", text: { en: "I struggle to see clarity in situations that matter to me.", hi: "मुझे अपने लिए अहम चीज़ों में सही फैसला करना मुश्किल लगता है।" } },
                     { id: "te3", text: { en: "I feel mentally tired, even after sleeping.", hi: "सोने के बाद भी मैं मानसिक रूप से थका हुआ महसूस करता हूँ।" } }
                 ] 
             },
@@ -273,9 +274,9 @@
                     practice: { en: "Star gaze or journal your dreams.", hi: "तारों को देखें या अपने सपनों को लिखें।" }
                 },
                 questions: [
-                    { id: "c1", text: { en: "I feel disconnected from meaning or purpose in my life.", hi: "मैं अपने जीवन के अर्थ या उद्देश्य से कटा हुआ महसूस करता हूँ।" } },
-                    { id: "c2", text: { en: "I rarely experience deep inner peace.", hi: "मैं शायद ही कभी गहरी आंतरिक शांति का अनुभव करता हूँ।" } },
-                    { id: "c3", text: { en: "I feel lost, even when everything looks fine outside.", hi: "जब बाहर सब कुछ ठीक दिखता है, तब भी मैं अंदर से खोया हुआ महसूस करता हूँ।" } }
+                    { id: "c1", text: { en: "I feel disconnected from meaning or purpose in my life.", hi: "मैं अपने जीवन के उद्देश्य से कोसों दूर महसूस करता हूँ।" } },
+                    { id: "c2", text: { en: "I rarely experience deep inner peace.", hi: "मुझे अंदर से गहरी शांति बहुत कम महसूस होती है।" } },
+                    { id: "c3", text: { en: "I feel lost, even when everything looks fine outside.", hi: "मैं अंदर से खोया-खोया महसूस करता हूँ, भले ही बाहर से मैं सबको कितना भी ठीक दिखूँ।" } }
                 ] 
             }
         ];
